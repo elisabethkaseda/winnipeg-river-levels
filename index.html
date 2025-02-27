@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winnipeg River Water Levels</title>
+    <link href="template/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Winnipeg River Water Levels</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <!-- Eventually the home page will have a different view, but for this assignment, we're going with just the archive for the sake of time/scope. -->
+            <!-- <a href="archive.html">View Archive</a> -->
+        </nav>
+    </header>
+
+    <main>
+        <h1>Archive of Recent Readings</h1>
+        <div class="container">
+            <p>Select a location to view data for just that location.</p>
+
+            <h2>Red River (in order of river flow - Northward)</h2>
+            <button onclick="filterByLocation(this);">South Perimeter</button>
+            <button onclick="filterByLocation(this);">Fort Garry</button>
+            <button onclick="filterByLocation(this);">James Avenue</button>
+            <button onclick="filterByLocation(this);">Kildonan Bridge</button>
+            <button onclick="filterByLocation(this);">North Perimeter</button>
+
+            <h2>Assiniboine River (in order of river flow - Eastward)</h2>
+            <button onclick="filterByLocation(this);">Charleswood</button>
+            <button onclick="filterByLocation(this);">St. James</button>
+            <button onclick="filterByLocation(this);">Osborne</button>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <th>River</th>
+                        <th>Location</th>
+                        <th>James Feet</th>
+                        <th>Geodetic Feet</th>
+                        <th>Geodetic Meters</th>
+                        <th>Reading Date</th>
+                    </thead>
+            
+                    <tbody id="archive">
+                        <tr>
+                            <td colspan="6" class="loading">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- For a slightly more ambitious later project... -->
+    <!-- <main>
+        <h1>Latest Results</h1>
+        <h2>Red River</h2>
+        <table>
+            <thead>
+                <th>Location</th>
+                <th>James Feet</th>
+                <th>Geodetic Feet</th>
+                <th>Geodetic Meters</th>
+                <th>Reading Date</th>
+            </thead>
+    
+            <tbody id="results">
+                <tr>
+                    <td colspan="5">Loading...</td>
+                </tr>
+            </tbody>
+        </table> 
+        <h2>Assiniboine River</h2>
+        <table>
+            <thead>
+                <th>Location</th>
+                <th>James Feet</th>
+                <th>Geodetic Feet</th>
+                <th>Geodetic Meters</th>
+                <th>Reading Date</th>
+            </thead>
+    
+            <tbody id="results">
+                <tr>
+                    <td colspan="5">Loading...</td>
+                </tr>
+            </tbody>
+        </table> 
+    </main> -->
+    <footer>
+        <p>&copy; 2024 Elisabeth Kaseda</p>
+        <p>River Water Levels data from <a href="https://data.winnipeg.ca" target="_blank">City of Winnipeg Open Data Portal</a></p>
+    </footer>
+
+    <script src="template/js/script.js"></script>
+    <script>
+    // Calling this over here so it doesn't run on every page. Not sure if there's a better way to do this in the script.js file?
+    getArchiveData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/* Basic CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */ 
+
+/* Experimenting with the (relatively) new light-dark CSS feature, which allows for two color values to be assigned to any given thing, and follows user system settings. */
+/* See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark */
+/* Change your system settings to see it work! */
+
+:root {
+    color-scheme: light dark;
+
+    /* Light Scheme Colors */
+    --light-primary: #F5F3F2;
+    --light-secondary: #D2A093;
+    --light-accent: #4E949D;
+    --light-mid-secondary: #EBC3B9;
+    --light-table-1: #96D3E1;
+    --light-table-2: #71AFB7;
+    --light-text: #310800;
+    --light-alt-text: #6A2315;
+
+    /* Dark Scheme Colors */
+    --dark-primary: #251101;
+    --dark-secondary: #592F0F;
+    --dark-accent: #437875;
+    --dark-mid-secondary: #72411B;
+    --dark-table-1: #28494D;
+    --dark-table-2: #436362;
+    --dark-text: #F5F3F2;
+    --dark-alt-text: #EDE1DB;
+
+    /* Font Families */
+    --font: 'Merriweather', serif;
+}
+
+/* Basic Styles */
+
+body {
+    background-color: light-dark(var(--light-primary),var(--dark-primary));
+    color: light-dark(var(--light-text),var(--dark-text));
+    font-family: var(--font);
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h2 {
+    margin: 1rem 0;
+}
+
+button {
+    padding: 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: light-dark(var(--light-accent),var(--dark-accent));
+    color: light-dark(var(--light-text),var(--dark-text));
+    border: none;
+    border-radius: 0.5rem;
+    font-family: var(--font);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: light-dark(var(--light-table-1),var(--dark-table-1));
+    cursor: pointer;
+}
+
+.active {
+    background-color: light-dark(var(--light-table-2),var(--dark-table-2));
+}
+
+/* Header Styling */ 
+
+header {
+    background-color: light-dark(var(--light-secondary),var(--dark-secondary));
+    color: light-dark(var(--light-text),var(--dark-text));
+    min-height: 4rem;
+    height: 13vh;
+    padding: 0.5rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    font-weight: 700;
+    color: light-dark(var(--light-text),var(--dark-text));
+}
+
+header a:hover {
+    color: light-dark(var(--light-alt-text),var(--dark-alt-text));
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+/* Main and Table Styling */
+
+main {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.loading {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+}
+
+tr:nth-child(odd) {
+    background-color: light-dark(var(--light-table-1),var(--dark-table-1));
+}
+
+tr:nth-child(even) {
+    background-color: light-dark(var(--light-table-2),var(--dark-table-2));
+}
+
+tr:hover {
+    background-color: light-dark(var(--light-mid-secondary),var(--dark-mid-secondary));
+}
+
+td, 
+th {
+    padding: 0.5rem;
+    border: none;
+}
+
+th {
+    background-color: light-dark(var(--light-secondary),var(--dark-secondary));
+    color: light-dark(var(--light-text),var(--dark-text));
+    text-align: left;
+}
+
+/* Footer Styling */ 
+
+footer {
+    background-color: light-dark(var(--light-secondary),var(--dark-secondary));
+    min-height: 4rem;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+/* Mobile Styles */
+
+/* Eventually going to have this styled for mobile, since out-and-about is when it would be fun to reference, but leaving it for now. */
