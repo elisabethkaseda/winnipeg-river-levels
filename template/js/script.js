@@ -100,9 +100,9 @@ function getQueryDateTime() {
 
     // if we go back a day, do we need to go back a month?
     if (queryDay < 1) {
-        if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (month == 5 || month == 7 || month == 10 || month == 12) {
             queryDay += 30;
-        } else if (month == 2) {
+        } else if (month == 3) {
             // yes, this will currently break on leap years...
             queryDay += 28;
         } else {
