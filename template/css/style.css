@@ -52,11 +52,24 @@ body {
 
 h1 {
     text-align: center;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
 }
 
 h2 {
     margin: 1rem 0;
+}
+
+p {
+    line-height: 1.5rem;
+    margin: 1rem 0;
+}
+
+a {
+    color: light-dark(var(--light-alt-text),var(--dark-alt-text));
+}
+
+a:hover {
+    color: light-dark(var(--light-text),var(--dark-text));
 }
 
 button {
@@ -94,6 +107,11 @@ header {
     align-items: center;
 }
 
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
 header a {
     text-decoration: none;
     font-weight: 700;
@@ -121,8 +139,13 @@ main {
     width: 90%;
 }
 
+.info {
+    margin-top: 1rem;
+}
+
 .table-container {
-    overflow-x: auto;
+    /* Apparently, I cannot have overflow set if I want to use sticky.
+    overflow-x: auto; */
     margin: 1rem 0;
 }
 
@@ -136,8 +159,9 @@ table {
     border-collapse: collapse;
 }
 
-thead {
+thead th {
     position: sticky;
+    top: 0;
 }
 
 tr:nth-child(odd) {
