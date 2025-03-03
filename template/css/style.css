@@ -25,6 +25,7 @@
     --light-mid-secondary: #EBC3B9;
     --light-table-1: #96D3E1;
     --light-table-2: #71AFB7;
+    --light-button-active: #82c2cb;
     --light-text: #310800;
     --light-alt-text: #6A2315;
 
@@ -35,6 +36,7 @@
     --dark-mid-secondary: #72411B;
     --dark-table-1: #28494D;
     --dark-table-2: #436362;
+    --dark-button-active: #345453;
     --dark-text: #F5F3F2;
     --dark-alt-text: #EDE1DB;
 
@@ -90,7 +92,7 @@ button:hover {
 }
 
 .active {
-    background-color: light-dark(var(--light-table-2),var(--dark-table-2));
+    background-color: light-dark(var(--light-button-active),var(--dark-button-active));
 }
 
 /* Header Styling */ 
